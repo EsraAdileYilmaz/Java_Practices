@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Wise_T127_Magasin {
 
-    //Oncelikle tum class'tan rahatlikla kullanilabilecek class levelde bir urun portfoyu cikardik.
+    //Oncelikle tum class'tan rahatlikla kullanilabilecek class levelde bir urun portfoyu olusturduk.
     //Her methodda farkli degerler atanacagi icin bunlara deger atamadik.
     //Ancak java bunlara default degerler atayacaktir.
 
@@ -70,7 +70,7 @@ public class Wise_T127_Magasin {
 
     public static void cikis() {
 
-        System.out.println("------- Cikis Yapiliyor -------");
+        System.out.println("------- Cikis Yapiliyor -------");System.exit(0);//Kodu tamamen durdursun diye yazdik
     }
 
     public static void fisYazdir() {
@@ -81,29 +81,125 @@ public class Wise_T127_Magasin {
     public static void market() {
 
         System.out.println("------- Market Reyonuna Hosgeldiniz -------");
+        System.out.println("Lutfen almak istediginiz urunun urun kodunu (UK) giriniz");
+        System.out.println("Pirinc Fiyati: 5€ UK: 31\nMercimek Fiyati: 3€ UK:32\nZeytin Fiyati:9€ UK:33 " +
+                "\nSampuan Fiyati: 7€ UK:34\nDus Jeli Fiyati: 5€ UK:35");
+
+        while ( !ekUrun){//urun almaya devam edildigi muddetce
+            urunKodu=scanner.nextInt();
+            if(urunKodu >=31 && urunKodu<= 35){
+                System.out.println("Aldiginiz urunun miktarini kg/ adet olarak yaziniz: ");
+                urunMiktari= scanner.nextInt();
+                switch (urunKodu){
+                    case 31:
+                        urunAdi="Pirinc";
+                        urunFiyati=5;
+                        System.out.println(urunMiktari +" kg/adet "+urunAdi+" fiyati: "+urunMiktari*urunFiyati+" €'dur");
+                        break;
+                    case 32:
+                        urunAdi="Mercimek";
+                        urunFiyati=3;
+                        System.out.println(urunMiktari +" kg/adet "+urunAdi+" fiyati: "+urunMiktari*urunFiyati+" €'dur");
+                        break;
+                    case 33:
+                        urunAdi="Zeytin";
+                        urunFiyati=9;
+                        System.out.println(urunMiktari +" kg/adet "+urunAdi+" fiyati: "+urunMiktari*urunFiyati+" €'dur");
+                        break;
+                    case 34:
+                        urunAdi="Sampuan";
+                        urunFiyati=7;
+                        System.out.println(urunMiktari +" kg/adet "+urunAdi+" fiyati: "+urunMiktari*urunFiyati+" €'dur");
+                        break;
+                    case 35:
+                        urunAdi="Dus Jeli";
+                        urunFiyati=5;
+                        System.out.println(urunMiktari +" kg/adet "+urunAdi+" fiyati: "+urunMiktari*urunFiyati+" €'dur");
+                        break;
+                }
+                urunFiyati=urunFiyati*urunMiktari;
+                toplam +=urunFiyati;
+                System.out.println("Olusan sepet tutari: "+ toplam);
+                sepet +=urunAdi+" fiyati: "+urunFiyati+" €'dur";
+                System.out.println("Baska bir urun almak istemisiniz? " +
+                        "\nEger baska urun almak isterseniz lutfrn kodunu giriniz." +
+                        "\nAna Menuye donmek icin lutfen 0 (Sifir) tusuna basiniz");
+
+            }else if(urunKodu ==0){
+                girisEkrani();
+            }
+
+        }
     }
 
     public static void sarkuteri() {
 
         System.out.println("------- Sarkuteri Reyonuna Hosgeldiniz -------");
+        System.out.println("Lutfen almak istediginiz urunun urun kodunu (UK) giriniz");
+        System.out.println("Kiyma Fiyati: 11€ UK: 21\nYumurta Fiyati: 5€ UK:22\nTavuk Fiyati: 10€ UK:23 " +
+                "\nAntrikot Fiyati: 25€ UK:24\nSucuk Fiyati: 5€ UK:25");
+
+        while(!ekUrun){//urun almaya devam edildigi muddetce
+            urunKodu= scanner.nextInt();
+            if(urunKodu >= 21 && urunKodu <=25){
+                System.out.println("Kac kg/koli alacaksiniz: ");
+                urunMiktari= scanner.nextInt();
+                switch (urunKodu){
+                    case 21:
+                        urunAdi="Kiyma";
+                        urunFiyati=11;
+                        System.out.println(urunMiktari +" kg/koli "+urunAdi+" fiyati: "+urunMiktari*urunFiyati+" €'dur");
+                        break;
+                    case 22:
+                        urunAdi="Yumurta";
+                        urunFiyati=5;
+                        System.out.println(urunMiktari +" kg/koli "+urunAdi+" fiyati: "+urunMiktari*urunFiyati+" €'dur");
+                        break;
+                    case 23:
+                        urunAdi="Tavuk";
+                        urunFiyati=10;
+                        System.out.println(urunMiktari +" kg/koli "+urunAdi+" fiyati: "+urunMiktari*urunFiyati+" €'dur");
+                        break;
+                    case 24:
+                        urunAdi="Antrikot";
+                        urunFiyati=25;
+                        System.out.println(urunMiktari +" kg/koli "+urunAdi+" fiyati: "+urunMiktari*urunFiyati+" €'dur");
+                        break;
+                    case 25:
+                        urunAdi="Sucuk";
+                        urunFiyati=5;
+                        System.out.println(urunMiktari +" kg/koli "+urunAdi+" fiyati: "+urunMiktari*urunFiyati+" €'dur");
+                        break;
+                }
+                urunFiyati=urunFiyati*urunMiktari;
+                toplam +=urunFiyati;
+                System.out.println("Olusan sepet tutari: "+ toplam);
+                sepet +=urunAdi+" fiyati: "+urunFiyati+" €'dur";
+                System.out.println("Baska bir urun almak istemisiniz? " +
+                                  "\nEger baska urun almak isterseniz lutfrn kodunu giriniz." +
+                                   "\nAna Menuye donmek icin lutfen 0 (Sifir) tusuna basiniz");
+
+            }else if(urunKodu ==0){
+                girisEkrani();
+            }
+        }
     }
 
     public static void manav() {
 
         System.out.println("------- Manav Reyonuna Hosgeldiniz -------");
         System.out.println("Lutfen almak istediginiz urunun urun kodunu (UK) giriniz");
-        System.out.println("Elma Fiyati: 2€ UK:11 \nMuz Fiyati: 2€ UK:12 \nDomates Fiyati: 2€ UK:13" +
+        System.out.println("Patates Fiyati: 2€ UK:11 \nMuz Fiyati: 2€ UK:12 \nDomates Fiyati: 2€ UK:13" +
                 "\nCilek Fiyati: 3€ UK:14 \nKarnabahar Fiyati: 2€ UK:15");
 
-        while( !ekUrun){
+        while( !ekUrun){//ekUrun true oldugu muddetce(yani urun almaya devam edildigi muddetce)
             urunKodu = scanner.nextInt();
-            if(urunKodu>= 11 && urunKodu <=15){
+            if(urunKodu >= 11 && urunKodu <=15){
                 System.out.println("Kac kg alacaksiniz: ");
-
                 urunMiktari=scanner.nextInt();
                 switch (urunKodu){
                     case 11:
-                        urunAdi="Elma";
+                        urunAdi="Patates";
                         urunFiyati= 2;
                         System.out.println(urunMiktari + "kg "+ urunAdi+ " fiyati: "+urunFiyati*urunMiktari +" € 'dur");
                         break;
@@ -129,14 +225,19 @@ public class Wise_T127_Magasin {
                         break;
 
                 }
+                urunFiyati=urunFiyati*urunMiktari;
+                toplam +=urunFiyati;
+                System.out.println("Olusan Sepet Tutari :"+toplam);
+                sepet += urunAdi+ " fiyati: "+urunFiyati+" €'dur";
+                System.out.println("Baska bir urun almak istermisiniz?" +
+                        "\n Eger baska urun almak isterseniz lutfen kodunu giriniz." +
+                        "\nAna Menuye donmek icin lutfen 0 (Sifir) tusuna basiniz");
+
+            }else if(urunKodu ==0){
+                girisEkrani();
             }
 
         }
-
-
-
-
-
     }
 
 }
