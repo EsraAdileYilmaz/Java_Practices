@@ -1,3 +1,4 @@
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Wise_T127_Magasin {
@@ -75,7 +76,25 @@ public class Wise_T127_Magasin {
 
     public static void fisYazdir() {
 
-        System.out.println("------- Fis Yazdiriliyor -------");
+        System.out.println("------- WISE T127 MAGASIN -------");
+        System.out.println("Alisverisinizde Bizi Tercih Ettiginiz Icin Tesekkur Ederiz" +
+                           "\nYine Bekleriz");
+        System.out.println(sepet);
+        System.out.println(" ");
+        System.out.println("Toplam Alisveris Tutari: "+ toplam);
+        System.out.println("Musterinin Odeme Miktarini Giriniz: ");
+        int odeme= scanner.nextInt();
+        if(odeme <toplam){
+            System.out.println("Odeme yetersiz. Odemeniz "+(toplam-odeme)+" € kadar eksiktir.");
+        }else{
+            System.out.println("Odenen Tutar: "+odeme+"\nPara Ustu: "+(odeme-toplam));
+        }
+        LocalDateTime saat= LocalDateTime.now();
+        System.out.println(saat);
+        System.out.println(" Iyi Gunler Dileriz - Yine Bekleriz ");
+        cikis();
+
+
     }
 
     public static void market() {
@@ -85,7 +104,7 @@ public class Wise_T127_Magasin {
         System.out.println("Pirinc Fiyati: 5€ UK: 31\nMercimek Fiyati: 3€ UK:32\nZeytin Fiyati:9€ UK:33 " +
                 "\nSampuan Fiyati: 7€ UK:34\nDus Jeli Fiyati: 5€ UK:35");
 
-        while ( !ekUrun){//urun almaya devam edildigi muddetce
+        while ( !ekUrun){//yeni urun almaya devam edildigi muddetce
             urunKodu=scanner.nextInt();
             if(urunKodu >=31 && urunKodu<= 35){
                 System.out.println("Aldiginiz urunun miktarini kg/ adet olarak yaziniz: ");
@@ -120,12 +139,12 @@ public class Wise_T127_Magasin {
                 urunFiyati=urunFiyati*urunMiktari;
                 toplam +=urunFiyati;
                 System.out.println("Olusan sepet tutari: "+ toplam);
-                sepet +=urunAdi+" fiyati: "+urunFiyati+" €'dur";
-                System.out.println("Baska bir urun almak istemisiniz? " +
-                        "\nEger baska urun almak isterseniz lutfrn kodunu giriniz." +
+                sepet +=urunAdi+" fiyati: "+urunFiyati+" €'dur\n";
+                System.out.println("Baska bir urun almak istermisiniz? " +
+                        "\nEger baska urun almak isterseniz lutfen kodunu giriniz." +
                         "\nAna Menuye donmek icin lutfen 0 (Sifir) tusuna basiniz");
 
-            }else if(urunKodu ==0){
+            }else if(urunKodu ==0){//urun almamissa
                 girisEkrani();
             }
 
@@ -139,7 +158,7 @@ public class Wise_T127_Magasin {
         System.out.println("Kiyma Fiyati: 11€ UK: 21\nYumurta Fiyati: 5€ UK:22\nTavuk Fiyati: 10€ UK:23 " +
                 "\nAntrikot Fiyati: 25€ UK:24\nSucuk Fiyati: 5€ UK:25");
 
-        while(!ekUrun){//urun almaya devam edildigi muddetce
+        while(!ekUrun){//yeni urun almaya devam edildigi muddetce
             urunKodu= scanner.nextInt();
             if(urunKodu >= 21 && urunKodu <=25){
                 System.out.println("Kac kg/koli alacaksiniz: ");
@@ -174,12 +193,12 @@ public class Wise_T127_Magasin {
                 urunFiyati=urunFiyati*urunMiktari;
                 toplam +=urunFiyati;
                 System.out.println("Olusan sepet tutari: "+ toplam);
-                sepet +=urunAdi+" fiyati: "+urunFiyati+" €'dur";
-                System.out.println("Baska bir urun almak istemisiniz? " +
-                                  "\nEger baska urun almak isterseniz lutfrn kodunu giriniz." +
+                sepet +=urunAdi+" fiyati: "+urunFiyati+" €'dur\n";
+                System.out.println("Baska bir urun almak istermisiniz? " +
+                                  "\nEger baska urun almak isterseniz lutfen kodunu giriniz." +
                                    "\nAna Menuye donmek icin lutfen 0 (Sifir) tusuna basiniz");
 
-            }else if(urunKodu ==0){
+            }else if(urunKodu ==0){//urun almamissa
                 girisEkrani();
             }
         }
@@ -192,7 +211,7 @@ public class Wise_T127_Magasin {
         System.out.println("Patates Fiyati: 2€ UK:11 \nMuz Fiyati: 2€ UK:12 \nDomates Fiyati: 2€ UK:13" +
                 "\nCilek Fiyati: 3€ UK:14 \nKarnabahar Fiyati: 2€ UK:15");
 
-        while( !ekUrun){//ekUrun true oldugu muddetce(yani urun almaya devam edildigi muddetce)
+        while( !ekUrun){//ekUrun true oldugu muddetce(yani yeni urun almaya devam edildigi muddetce)
             urunKodu = scanner.nextInt();
             if(urunKodu >= 11 && urunKodu <=15){
                 System.out.println("Kac kg alacaksiniz: ");
@@ -228,12 +247,12 @@ public class Wise_T127_Magasin {
                 urunFiyati=urunFiyati*urunMiktari;
                 toplam +=urunFiyati;
                 System.out.println("Olusan Sepet Tutari :"+toplam);
-                sepet += urunAdi+ " fiyati: "+urunFiyati+" €'dur";
+                sepet += urunAdi+ " fiyati: "+urunFiyati+" €'dur\n";
                 System.out.println("Baska bir urun almak istermisiniz?" +
                         "\n Eger baska urun almak isterseniz lutfen kodunu giriniz." +
                         "\nAna Menuye donmek icin lutfen 0 (Sifir) tusuna basiniz");
 
-            }else if(urunKodu ==0){
+            }else if(urunKodu ==0){//urun almamissa
                 girisEkrani();
             }
 
