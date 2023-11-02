@@ -33,6 +33,7 @@ public class P13_BaklavaDeseni {
                 System.out.print("* ");
             }
             System.out.println();
+
         }
     }
 
