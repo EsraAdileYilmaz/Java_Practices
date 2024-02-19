@@ -25,7 +25,7 @@ public class P01 {
     public static ArrayList<Integer> binaryDonusum(int sayi) {
         ArrayList<Integer> binary=new ArrayList<>();
         while(sayi>=1){//sayi 1 oluncaya kadar isleme devam et
-            binary.add(sayi%2); //sayıyı 2'ye bölüp kalanını ekleyecek
+            binary.add(sayi%2); //sayıyı 2'ye bölüp kalanını ekleyecek.yani 2ye bolumden kalani ekle
             sayi/=2; //sayi=sayi/2
         }
         Collections.reverse(binary);

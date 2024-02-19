@@ -19,7 +19,7 @@ public class P02 {
          */
 
 
-        System.out.print("Mountain Array Kontrolü için array elemanı sayıları arlarındavirgül koyarak giriniz: ");
+        System.out.print("Mountain Array Kontrolü için array elemanı sayıları arlarında virgül koyarak giriniz: ");
         Scanner scan=new Scanner(System.in);
         String str= scan.next();
         String strArr[]=str.split(",");
@@ -27,8 +27,8 @@ public class P02 {
         for (int i = 0; i < strArr.length; i++) {
             Arr[i]=Integer.parseInt(strArr[i]);
         }
-        boolean isMoutain=MountainArrayControl(Arr);
-        if (isMoutain){
+        boolean isMountain=MountainArrayControl(Arr);
+        if (isMountain){
             System.out.println("Array mountain array'dir");
         }else{
             System.out.println("Array mountain array değildir");
@@ -37,8 +37,8 @@ public class P02 {
 
     }
 
-    private static boolean MountainArrayControl(int[] Arr) {
-        if (Arr.length<3){
+    public static boolean MountainArrayControl(int[] Arr) {
+        if (Arr.length<3){//En az 3 elemanli olmalidir
             return false;
         }
         int enBuyuk=0;

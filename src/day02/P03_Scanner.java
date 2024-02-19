@@ -15,5 +15,7 @@ public class P03_Scanner {
         String surname= scan.next();
         System.out.println("Adınız: "+name+" "+surname+" olarak kaydedildi.");
 
+
+
     }
 }
